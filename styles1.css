@@ -1,0 +1,407 @@
+/* VARIABLES DE COLOR - Conservando los de la imagen */
+:root {
+    --pink-soft: #e093a5;
+    --pink-accent: #e94b73;
+    --black: #1a1a1a;
+    --text: #4a4a4a;
+    --white: #ffffff;
+}
+
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ESTILOS DE IMAGEN */
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto evita que la imagen se estire feo */
+    display: block;
+}
+
+/* BOTONES */
+.btn-black {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 1px solid var(--black);
+    color: var(--black);
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin-top: 15px;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    min-height: 70vh;
+}
+
+.hero-content {
+    flex: 1;
+    background-color: var(--pink-soft);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    text-align: center;
+}
+
+.logo-box {
+    border: 1px solid var(--pink-accent);
+    padding: 20px 40px;
+    margin-bottom: 20px;
+}
+
+.logo-box h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    letter-spacing: 6px;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+/* INTRO */
+.intro {
+    display: flex;
+    padding: 80px 10%;
+    align-items: center;
+    gap: 30px;
+}
+
+.intro-title, .intro-text {
+    flex: 1;
+}
+
+.intro-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+}
+
+.italic-pink {
+    font-style: italic;
+    color: var(--pink-accent);
+}
+
+/* EXPERTISE */
+.expertise {
+    padding-bottom: 40px;
+}
+
+.bg-title-fade {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--pink-soft);
+    text-align: center;
+    letter-spacing: 12px;
+    margin-bottom: -30px; /* Superpone el texto de fondo */
+}
+
+.service-row {
+    display: flex;
+    align-items: center;
+}
+
+.service-info {
+    flex: 1;
+    padding: 60px 10%;
+}
+
+.cursive-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.service-img {
+    flex: 0.80;
+    height: 200px;
+    width: 100%;
+}
+
+/* Forma de arco de la imagen superior */
+.arc img {
+    border-radius: 250px 250px 0 0;
+}
+
+.bg-pink { background-color: var(--pink-soft); }
+.reverse { flex-direction: row-reverse; }
+
+/* --- RESPONSIVE 500PX --- */
+@media (max-width: 500px) {
+    .hero, .intro, .service-row {
+        flex-direction: column; /* Apila todo en una columna */
+    }
+
+    .hero-content {
+        order: 2; /* El texto pasa abajo de la foto en móvil */
+        padding: 40px 20px;
+    }
+
+    .hero-image {
+        order: 1;
+        height: 200px;
+        width: 100%;
+    }
+
+    .intro {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .intro-title h2 { font-size: 2rem; }
+
+    .bg-title-fade { font-size: 2.5rem; margin-bottom: 10px; }
+
+    .service-img1{
+        height: 250px;
+        width: 200%;
+    }
+
+    /* Imagen específica 'Maquillaje' más pequeña en móviles */
+    img[alt="Maquillaje"] {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        display: block;
+    }
+    .reverse {
+        flex-direction: column; /* Quita el inverso para que la foto siempre esté arriba en móvil */
+    }
+
+    .service-info {
+        padding: 40px 20px;
+        text-align: center;
+    }
+}
+/* ESTILOS DEL FOOTER CENTRADO */
+.main-footer {
+    background-color: var(--white);
+    border-top: 1px solid var(--pink-soft);
+    padding: 30px 20px 30px 10px;
+    text-align: center; /* Centra todo el texto por defecto */
+}
+
+.footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los bloques hijos */
+    gap: 15px;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    letter-spacing: 5px;
+    color: var(--black);
+    margin-bottom: 5px;
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-style: italic;
+}
+
+/* Navegación del Footer en línea */
+.footer-nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--pink-accent);
+}
+
+.footer-location p {
+    font-size: 0.85rem;
+    color: var(--text);
+    margin: 2px 0;
+}
+
+/* Círculos de Redes Sociales */
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-circle {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--black);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.social-circle:hover {
+    background-color: var(--pink-accent);
+    transform: scale(1.1);
+}
+
+.footer-copyright {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--pink-soft);
+    font-size: 0.75rem;
+    color: #999;
+}
+
+/* --- RESPONSIVE 500PX --- */
+@media (max-width: 500px) {
+    .footer-nav {
+        flex-direction: column; /* Enlaces uno sobre otro en móviles */
+        gap: 15px;
+    }
+    
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+    
+    .footer-container {
+        gap: 25px;
+    }
+}
+/* ESTILOS DE LA BARRA DE NAVEGACIÓN STICKY */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--white);
+    padding: 15px 5%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra sutil */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--pink-accent);
+}
+
+/* Botón especial para 'Reservar' */
+.nav-btn {
+    background-color: var(--black);
+    color: var(--white) !important;
+    padding: 8px 20px;
+    border-radius: 2px;
+}
+
+/* MENÚ HAMBURGUESA (Oculto por defecto) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    gap: 5px;
+}
+
+.bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--black);
+    transition: 0.3s;
+}
+
+
+@media (max-width: 500px) {
+    .menu-toggle {
+        display: flex; /* Muestra las barritas */
+    }
+
+    .nav-links {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Ajusta según el alto de tu nav */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 30px 0;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        gap: 25px;
+        z-index: 999;
+    }
+
+    /* ESTA CLASE ES LA QUE ACTIVA EL MENÚ */
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .nav-btn {
+        width: 80%;
+        margin: 0 auto;
+    } 
+}
