@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar - Glam Beauty</title>
+    <link rel="stylesheet" href="reservar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section class="booking-section">
+        <div class="booking-card">
+            <h1 class="booking-title">RESERVAR CITA</h1>
+            <p class="booking-desc">Completa los datos y te enviaremos a WhatsApp para confirmar.</p>
+
+            <form id="whatsapp-form" class="glam-form">
+                <div class="form-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="user_name" placeholder="Tu nombre..." required>
+                </div>
+
+                <div class="form-group">
+                    <label>Servicio</label>
+                    <select id="user_service" required>
+                        <option value="">Selecciona un servicio</option>
+                        <option value="Cabello">Cabello (Corte/Color)</option>
+                        <option value="Uñas">Uñas (Manicura/Pedicura)</option>
+                        <option value="Maquillaje">Maquillaje Profesional</option>
+                        <option value="Facial">Tratamiento Facial</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha de Cita</label>
+                    <input type="date" id="user_date" required>
+                </div>
+
+                <button type="submit" class="btn-send">RESERVAR POR WHATSAPP</button>
+            </form>
+
+            <div class="rules">
+                <p>• Sujeto a disponibilidad • Cancelaciones con 24h de aviso</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider-section">
+        <h2 class="slider-title">Nuestras Clientas</h2>
+        <div class="slider-mask">
+            <div class="slider-track" id="slider">
+                <div class="slide"><img src="./img/img3.png" alt="Cliente 1"></div>
+                <div class="slide"><img src="./img/img4.png" alt="Cliente 2"></div>
+                <div class="slide"><img src="./img/img5.png" alt="Cliente 3"></div>
+                <div class="slide"><img src="./img/img6.png" alt="Cliente 4"></div>
+                <div class="slide"><img src="./img/img7.png" alt="Cliente 5"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h4 class="footer-logo">GLAM BEAUTY</h4>
+                <p>Where beauty and luxury meet.</p>
+            </div>
+
+            <nav class="footer-nav">
+               <a href="credenciales.html">credenciales</a>
+                <a href="reservar.html">reservar</a>
+                <a href="index.html">inicio</a>
+              
+            </nav>
+
+            <div class="footer-socials">
+                <a href="#" class="social-btn">IG</a>
+                <a href="#" class="social-btn">FB</a>
+                <a href="#" class="social-btn">TK</a>
+            </div>
+
+            <div class="footer-copy">
+                <p>&copy; 2026 Glam Beauty Salon. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- ENVÍO A WHATSAPP ---
+     
+         document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
+                e.preventDefault(); // Detenemos el envío tradicional
+    
+                const miTelefono = "5491123456789"; // Solo números, sin espacios ni símbolos
+                const nombre = document.getElementById('user_name').value;
+                const servicio = document.getElementById('user_service').value;
+                const fecha = document.getElementById('user_date').value;
+    
+                const mensajeTexto = `Hola Glam Beauty! ✨%0A%0A` +
+                                    `Quiero solicitar una cita:%0A` +
+                                    `• *Nombre:* ${nombre}%0A` +
+                                    `• *Servicio:* ${servicio}%0A` +
+                                    `• *Fecha:* ${fecha}%0A%0A` +
+                                    `¿Me confirman disponibilidad?`;
+    
+                const linkFinal = `https://wa.me/${miTelefono}?text=${mensajeTexto}`;
+                window.location.assign(linkFinal); // Redirige en la misma pestaña
+          });
+    // --- LÓGICA DE WHATSAPP REFORZADA ---
+    document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
+        // Detenemos el envío tradicional del formulario
+        e.preventDefault(); 
+
+        // 1. CONFIGURACIÓN DEL NÚMERO
+        // Importante: Solo números. Ej: 5491123456789
+        const miTelefono = "584249316555"; 
+
+        // 2. RECOLECTAR DATOS
+        const nombre = document.getElementById('user_name').value;
+        const servicio = document.getElementById('user_service').value;
+        const fecha = document.getElementById('user_date').value;
+
+        // 3. CONSTRUIR EL MENSAJE
+        // Usamos \n para saltos de línea y encodeURIComponent para que sea seguro
+        const mensajeTexto = `Hola Glam Beauty! ✨%0A%0A` +
+                             `Quiero solicitar una cita:%0A` +
+                             `• *Nombre:* ${nombre}%0A` +
+                             `• *Servicio:* ${servicio}%0A` +
+                             `• *Fecha:* ${fecha}%0A%0A` +
+                             `¿Me confirman disponibilidad?`;
+
+        // 4. URL DE WHATSAPP (Usamos wa.me porque es la más aceptada)
+        const linkFinal = `https://wa.me/${miTelefono}?text=${mensajeTexto}`;
+
+        // 5. REDIRECCIÓN EN LA MISMA PESTAÑA (Esto engaña al AdBlock)
+        // En lugar de window.open, usamos este:
+        window.location.assign(linkFinal);
+    });
+
+    // --- SLIDER AUTOMÁTICO ---
+    let actual = 0;
+    const sliderContainer = document.getElementById('slider');
+    function moverSlider() {
+        if(!sliderContainer) return;
+        actual++;
+        if (actual > 4) actual = 0;
+        sliderContainer.style.transform = `translateX(${-actual * 20}%)`;
+    }
+    setInterval(moverSlider, 3000);
+</script>
+
+</body>
+</html>
