@@ -1,0 +1,77 @@
+:root {
+    --pink-light: #f7e1e6;
+    --pink-dark: #e9c2cc;
+    --black: #1a1a1a;
+    --white: #ffffff;
+    --grey: #555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+img { width: 100%; display: block; object-fit: cover; }
+
+/* SECCIÓN PRINCIPAL / HISTORIA */
+.main-info { padding: 80px 10%; background-color: var(--pink-light); }
+.brand-name { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 3rem; 
+    text-align: center; 
+    letter-spacing: 5px; 
+    margin-bottom: 50px;
+}
+.content-wrapper { display: flex; gap: 50px; align-items: flex-start; }
+.text-block, .data-block { flex: 1; background: white; padding: 30px; border-radius: 5px; }
+
+h2, h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; }
+ul { list-style: none; }
+ul li { margin-bottom: 10px; font-size: 0.9rem; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+
+/* GALERÍA DE CLIENTES */
+.clients-gallery { padding: 80px 10%; text-align: center; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 2rem; letter-spacing: 3px; margin-bottom: 10px; }
+.subtitle { color: var(--grey); margin-bottom: 40px; font-style: italic; }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+.img-box { height: 250px; overflow: hidden; border-radius: 8px; }
+
+/* EQUIPO TRABAJADORES */
+.team-section { padding: 80px 10%; background: #fafafa; text-align: center; }
+.team-grid { display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
+.team-card { width: 200px; }
+.team-img-circle { 
+    width: 150px; height: 150px; border-radius: 50%; 
+    margin: 0 auto 15px; overflow: hidden; 
+    border: 3px solid var(--pink-dark);
+}
+.team-card h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+.team-card span { font-size: 0.8rem; color: var(--grey); text-transform: uppercase; }
+
+/* FOOTER (REUTILIZADO) */
+.main-footer { padding: 60px 20px; border-top: 1px solid var(--pink-light); text-align: center; }
+.footer-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 25px; }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 3px; }
+.footer-nav { display: flex; justify-content: center; gap: 20px; }
+.footer-nav a { text-decoration: none; color: var(--black); font-size: 0.8rem; }
+.footer-socials { display: flex; justify-content: center; gap: 15px; }
+.social-circle { background: var(--black); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 0.7rem; }
+.footer-copyright { font-size: 0.7rem; color: #aaa; margin-top: 20px; }
+
+/* RESPONSIVE 500PX */
+@media (max-width: 500px) {
+    .content-wrapper { flex-direction: column; }
+    .brand-name { font-size: 1.8rem; }
+    .main-info, .clients-gallery, .team-section { padding: 40px 15px; }
+    .footer-nav { flex-direction: column; gap: 10px; }
+    .gallery-grid { grid-template-columns: 1fr; }
+}
