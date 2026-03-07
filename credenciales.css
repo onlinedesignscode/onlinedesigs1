@@ -75,3 +75,142 @@ ul li { margin-bottom: 10px; font-size: 0.9rem; border-bottom: 1px solid #eee; p
     .footer-nav { flex-direction: column; gap: 10px; }
     .gallery-grid { grid-template-columns: 1fr; }
 }
+/* --- SECCIÓN GALERÍA 2X2 --- */
+.gallery-results {
+    padding: 80px 10%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.gallery-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.gallery-header p {
+    font-size: 0.9rem;
+    color: #f702ea;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+/* El truco del 2x2 */
+.gallery-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    gap: 40px; /* Espacio entre cuadros */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    width: 100%;
+}
+
+/* El Marco Negro que te gustó */
+.frame-black {
+    border: 1px solid #333333; /* Negro suave */
+    padding: 15px;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.frame-black:hover {
+    transform: scale(1.02); /* Pequeño zoom al pasar el mouse */
+}
+
+.frame-black img {
+    width: 100%;
+    height: 350px; /* Altura ideal para que encajen las 4 en pantalla */
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item h3 {
+    margin-top: 15px;
+    font-family: serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #f702ea;
+}
+
+
+
+
+
+
+/* --- RESPONSIVE 500PX --- */
+@media (max-width: 500px) {
+    .gallery-grid-2x2 {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        gap: 30px;
+    }
+
+    .gallery-results {
+        padding: 40px 20px;
+    }
+
+    .frame-black img {
+        height: 300px; /* Un poco más bajas para que no ocupe toda la pantalla */
+    }
+}
+/* --- SECCIÓN FOTO GRUPAL --- */
+.group-photo-section {
+    padding: 80px 10%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.group-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.group-header p {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+/* Contenedor del marco */
+.group-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Marco negro elegante */
+.group-frame {
+    border: 2px solid #1a1a1a; /* Marco un poco más grueso que las individuales */
+    padding: 20px; /* Espacio interno más grande */
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.group-frame img {
+    width: 100%;
+    height: 450px; /* Altura generosa para la foto grupal */
+    object-fit: cover;
+    display: block;
+}
+
+/* --- RESPONSIVE 500PX --- */
+@media (max-width: 500px) {
+    .group-photo-section {
+        padding: 40px 20px;
+    }
+
+    .group-frame {
+        padding: 10px; /* Menos padding en móvil para aprovechar espacio */
+    }
+
+    .group-frame img {
+        height: 250px; /* Altura ajustada para pantallas verticales */
+    }
+}

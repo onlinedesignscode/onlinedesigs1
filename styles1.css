@@ -39,6 +39,11 @@ img {
     letter-spacing: 2px;
     margin-top: 15px;
 }
+.subtitle1 {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-top: 10px;
+}
 
 .btn-outline {
     display: inline-block;

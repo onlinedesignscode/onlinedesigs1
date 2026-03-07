@@ -24,10 +24,9 @@
                     <label>Servicio</label>
                     <select id="user_service" required>
                         <option value="">Selecciona un servicio</option>
-                        <option value="Cabello">Cabello (Corte/Color)</option>
-                        <option value="Uñas">Uñas (Manicura/Pedicura)</option>
-                        <option value="Maquillaje">Maquillaje Profesional</option>
-                        <option value="Facial">Tratamiento Facial</option>
+                        <option value="Cabello">Cabello (Corte/Color/secado/hidratacion/planchado/alisado)</option>
+                        <option value="Uñas">Uñas (Manicura/Pedicura/sistemas)</option>
+                        <option value="Facial">Tratamiento Facial( depilado facial)</option>
                     </select>
                 </div>
 
@@ -44,24 +43,50 @@
             </div>
         </div>
     </section>
+    
+<section class="results-section">
+    <div class="results-title">
+        <h2>NUESTROS TRABAJOS</h2>
+    </div>
 
-    <section class="slider-section">
-        <h2 class="slider-title">Nuestras Clientas</h2>
-        <div class="slider-mask">
-            <div class="slider-track" id="slider">
-                <div class="slide"><img src="./img/img3.png" alt="Cliente 1"></div>
-                <div class="slide"><img src="./img/img4.png" alt="Cliente 2"></div>
-                <div class="slide"><img src="./img/img5.png" alt="Cliente 3"></div>
-                <div class="slide"><img src="./img/img6.png" alt="Cliente 4"></div>
-                <div class="slide"><img src="./img/img7.png" alt="Cliente 5"></div>
+    <div class="results-grid">
+        <div class="result-card">
+            <div class="card-frame">
+                <img src="./img/img (3).jpeg" alt="Resultado 1">
+            </div>
+            <div class="card-info">
+                <h3>DISEÑO CLASSIC</h3>
             </div>
         </div>
-    </section>
+
+        <div class="result-card">
+            <div class="card-frame">
+                <img src="./img/img (2).jpeg" alt="Resultado 2">
+            </div>
+            <div class="card-info">
+                <h3>ESTILO BELLAS</h3>
+            </div>
+        </div>
+
+        <div class="result-card">
+            <div class="card-frame">
+                <img src="./img/img (5).jpeg" alt="Resultado 3">
+            </div>
+            <div class="card-info">
+                <h3>EFECTO BELLAS</h3>
+            </div>
+        </div>
+    </div>
+</section>
+   
+
+
+    
 
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <h4 class="footer-logo">BELLAS SALON&SPA</h4>
+                <h4 class="footer-logo">BELLAS SALON SALON&SPA</h4>
                 <p>donde la belleza y el lujo se encuentran.</p>
             </div>
 
@@ -79,7 +104,7 @@
             </div>
 
             <div class="footer-copy">
-                <p>&copy; 2026 Glam Beauty Salon. Todos los derechos reservados.</p>
+                <p>&copy; 2026 BELLAS SALON SALON&SPA. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -136,16 +161,7 @@
         window.location.assign(linkFinal);
     });
 
-    // --- SLIDER AUTOMÁTICO ---
-    let actual = 0;
-    const sliderContainer = document.getElementById('slider');
-    function moverSlider() {
-        if(!sliderContainer) return;
-        actual++;
-        if (actual > 4) actual = 0;
-        sliderContainer.style.transform = `translateX(${-actual * 20}%)`;
-    }
-    setInterval(moverSlider, 3000);
+
 </script>
 
 </body>
